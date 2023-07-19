@@ -149,6 +149,7 @@ int main()
 		printf("\t1 - Registrar Nomes\n");
 		printf("\t2 - Consultar Nomes\n");
 		printf("\t3 - Deletar Nomes\n");
+		printf("\n\t4 - Fechar o Programa\n");
 		printf("\n\tDigite a Opção Desejada: "); //Fim do menu
 		
 		scanf("%d", &opcao); //Armazenamento de resposta do usuário
@@ -169,8 +170,13 @@ int main()
 			deletar();
 			break;
 			
+			case 4:
+			printf("\n\n\n\tObrigado por usar o software!\n\n\n");
+			return 0;
+			break;
+			
 			default:
-			printf("\n\tEssa opção não está disponível!\n\n"); //Fim da seleção
+			printf("\n\n\n\n\tEssa opção não está disponível!\n\n\n\n"); //Fim da seleção
 			system("pause");
 			break;
 		}
