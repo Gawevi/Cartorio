@@ -75,8 +75,8 @@ int consulta() //Criação de função de consulta
 	if(file == NULL) //Definição de resposta para CPF inválido
 	{
 		system("cls");
-		printf("\n\tNão foi possível encontrar o CPF indicado!");
-		printf("\n\n");
+		printf("\n\n\n\n\tNão foi possível encontrar o CPF indicado!");
+		printf("\n\n\n\n");
 		system("pause");
 	}
 	
@@ -114,16 +114,16 @@ int deletar() //Criação de função de deletar
 	if(file == NULL)
 	{
 		system("cls");
-		printf("\n\tO CPF não foi encontrado!");
-		printf("\n\n");
+		printf("\n\n\n\n\tO CPF não foi encontrado!");
+		printf("\n\n\n\n");
 		system("pause");
 	}
 	
 	if(file != NULL)
 	{
 		system("cls");
-		printf("\n\tO CPF foi deletado com sucesso!");
-		printf("\n\n");
+		printf("\n\n\n\n\tO CPF foi deletado com sucesso!");
+		printf("\n\n\n\n");
 		system("pause");
 	}
 	
