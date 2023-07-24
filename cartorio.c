@@ -136,51 +136,70 @@ int main()
 {
 	int opcao=0; //Definição de varíavel de escolha do menu
 	int repetir=1; //Definição de variável para repetição
+	char senhadigitada[10]="a"; //Definição de string para a senha
+	int comparacao; //Variável para comparação
 	
-	for(repetir=1;repetir=1;) //Definição de repetição
+	setlocale(LC_ALL, "Portuguese");
+	
+	printf("### Cartório da EBAC ###\n\n"); //Início da tela
+	printf("\n\tLogin de Administrador!\n\n"); //Aviso de login
+	printf("\tInsira a senha: "); //Pedido de senha para login
+	scanf("%s",senhadigitada); //Armazenamento de resposta do usuário
+	
+	comparacao = strcmp(senhadigitada, "admin"); //Comparação de variável
+	
+	if(comparacao == 0) //Comparação de senha digitada com a senha criada
 	{
-
-		system("cls"); //Limpar a tela
-		
-		setlocale(LC_ALL, "Portuguese"); //Definição de linguagem
-		
-		printf("### Cartório da EBAC ###\n\n"); //Início do menu
-		printf("Funcionalidades do Software: \n\n");
-		printf("\t1 - Registrar Nomes\n");
-		printf("\t2 - Consultar Nomes\n");
-		printf("\t3 - Deletar Nomes\n");
-		printf("\n\t4 - Fechar o Programa\n");
-		printf("\n\tDigite a Opção Desejada: "); //Fim do menu
-		
-		scanf("%d", &opcao); //Armazenamento de resposta do usuário
-		
-		system("cls"); //Limpar a tela
-		
-		switch(opcao) //Início da seleção
+	
+		for(repetir=1;repetir=1;) //Definição de repetição
 		{
-			case 1:
-			registro();
-			break;
-				
-			case 2:
-			consulta();
-			break;
-				
-			case 3:
-			deletar();
-			break;
-			
-			case 4:
-			printf("\n\n\n\tObrigado por usar o software!\n\n\n");
-			return 0;
-			break;
-			
-			default:
-			printf("\n\n\n\n\tEssa opção não está disponível!\n\n\n\n"); //Fim da seleção
-			system("pause");
-			break;
-		}
+	
+			system("cls"); //Limpar a tela
 		
+			setlocale(LC_ALL, "Portuguese"); //Definição de linguagem
+		
+			printf("### Cartório da EBAC ###\n\n"); //Início do menu
+			printf("Funcionalidades do Software: \n\n");
+			printf("\t1 - Registrar Nomes\n");
+			printf("\t2 - Consultar Nomes\n");
+			printf("\t3 - Deletar Nomes\n");
+			printf("\n\t4 - Fechar o Programa\n");
+			printf("\n\tDigite a Opção Desejada: "); //Fim do menu
+		
+			scanf("%d", &opcao); //Armazenamento de resposta do usuário
+			
+			system("cls"); //Limpar a tela
+		
+			switch(opcao) //Início da seleção
+			{
+				case 1:
+				registro();
+				break;
+					
+				case 2:
+				consulta();
+				break;
+				
+				case 3:
+				deletar();
+				break;
+			
+				case 4:
+				printf("\n\n\n\tObrigado por usar o software!\n\n\n"); //Mensagem de despedida
+				return 0; //Opção para fechar o software
+				break;
+				
+				default:
+				printf("\n\n\n\n\tEssa opção não está disponível!\n\n\n\n"); //Fim da seleção
+				system("pause");
+				break;
+			}
+		}
 	}
 	
+	else
+	{
+		system("cls");
+		printf("\n\n\n\tA senha inserida está incorreta!\n\n"); //Informativo para senha errada
+	}
 }
